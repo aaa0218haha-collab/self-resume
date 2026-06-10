@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>袁宜蓁 Karen Yuan | 個人數位履歷</title>
+    <!-- 導入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 導入 Lucide 圖擺庫 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cafe: {
+                            50: '#FAF8F5',
+                            100: '#F5EFEB',
+                            200: '#E6D7CE',
+                            300: '#D7BFB1',
+                            600: '#A47E6C',
+                            700: '#8A6351',
+                            800: '#5C3E31',
+                            900: '#2D1B13',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FAF8F5;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF8F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D7BFB1;
+            border-radius: 2px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A47E6C;
+        }
+        /* 分類標籤作用中樣式 */
+        .main-tab-active {
+            border-color: #8A6351;
+            color: #8A6351;
+            background-color: #FAF8F5;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(138, 99, 81, 0.05);
+        }
+        /* 論文選單作用中樣式 */
+        .art-tab-active {
+            border-color: #8A6351;
+            color: #8A6351;
+            background-color: #FAF8F5;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="text-cafe-900 selection:bg-cafe-200 antialiased">
+
+    <div class="min-h-screen flex flex-col lg:flex-row">
+        
+        <!-- 左側固定欄：個人基本資訊 -->
+        <aside class="w-full lg:w-[360px] lg:fixed lg:top-0 lg:bottom-0 lg:left-0 bg-cafe-100 border-r border-cafe-200 p-8 flex flex-col justify-between overflow-y-auto z-10">
+            <div>
+                <!-- 個人照片展示區（直接置入真實相片） -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="relative w-44 h-48 rounded-2xl overflow-hidden border-4 border-white shadow-md bg-cafe-200 flex items-center justify-center">
+                        <img id="avatar-img" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/d/1ss_Li-912wcnNBwTnodBRMgj-rnwV9p0" alt="袁宜蓁" onerror="this.onerror=null; this.src='https://placehold.co/400x500/E6D7CE/5C3E31?text=Karen+Yuan';">
+                    </div>
+                    
+                    <h1 class="mt-4 text-2xl font-bold tracking-wider text-cafe-900">袁宜蓁</h1>
+                    <p class="text-xs text-cafe-600 font-medium tracking-widest mt-1">Karen Yuan</p>
+                    
+                    <div class="mt-3 flex flex-wrap justify-center gap-1">
+                        <span class="px-2.5 py-0.5 bg-cafe-200/60 rounded text-[10px] font-medium text-cafe-850">#復健諮商碩士</span>
+                        <span class="px-2.5 py-0.5 bg-cafe-200/60 rounded text-[10px] font-medium text-cafe-850">#職業輔導評量員</span>
+                    </div>
+                </div>
+
+                <!-- 聯絡資訊 -->
+                <div class="mt-6 space-y-2.5 bg-white/60 p-4 rounded-xl border border-cafe-200/40 text-xs">
+                    <div class="flex items-center text-cafe-700">
+                        <i data-lucide="phone" class="w-3.5 h-3.5 mr-2.5 shrink-0"></i>
+                        <a href="tel:0981-511-828" class="hover:text-cafe-900 hover:underline">0981-511-828</a>
+                    </div>
+                    <div class="flex items-center text-cafe-700">
+                        <i data-lucide="mail" class="w-3.5 h-3.5 mr-2.5 shrink-0"></i>
+                        <a href="mailto:aaa0218haha@gmail.com" class="hover:text-cafe-900 hover:underline">aaa0218haha@gmail.com</a>
+                    </div>
+                    <div class="flex items-center text-cafe-700">
+                        <i data-lucide="map-pin" class="w-3.5 h-3.5 mr-2.5 shrink-0"></i>
+                        <span>高雄市前鎮區</span>
+                    </div>
+                    <div class="flex items-center text-cafe-700">
+                        <i data-lucide="accessibility" class="w-3.5 h-3.5 mr-2.5 shrink-0"></i>
+                        <span>輕度下肢障礙 (不影響輔導與行政)</span>
+                    </div>
+                </div>
+
+                <!-- 核心專業證照 -->
+                <div class="mt-6">
+                    <h3 class="text-[11px] font-bold text-cafe-600 uppercase tracking-wider mb-2.5 px-1">核心專業資質</h3>
+                    <div class="space-y-1.5">
+                        <div class="flex items-center p-2 bg-white/40 border border-cafe-200/40 rounded-lg">
+                            <i data-lucide="award" class="w-3.5 h-3.5 text-cafe-700 mr-2"></i>
+                            <span class="text-[11px] text-cafe-800">勞動部職業輔導評量員資格</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-white/40 border border-cafe-200/40 rounded-lg">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-cafe-700 mr-2"></i>
+                            <span class="text-[11px] text-cafe-800">職涯輔導管理師雙證照</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 下載與列印 -->
+            <div class="mt-6 pt-4 border-t border-cafe-200/60 flex flex-col gap-2">
+                <button onclick="window.print()" class="w-full py-2 bg-cafe-600 hover:bg-cafe-700 text-white font-medium rounded-lg text-xs tracking-wider flex items-center justify-center transition-all duration-200">
+                    <i data-lucide="printer" class="w-3.5 h-3.5 mr-1.5"></i> 下載 / 列印履劇
+                </button>
+                <p class="text-[9px] text-cafe-500 text-center">© 2026 Karen Yuan. Powered by AI Workflow.</p>
+            </div>
+        </aside>
+
+        <!-- 右側內容主體與單行標籤導覽系統 -->
+        <main class="w-full lg:pl-[360px] flex-1 min-h-screen flex flex-col">
+            
+            <!-- 單行水平標籤列 -->
+            <nav class="sticky top-0 bg-cafe-50/95 backdrop-blur border-b border-cafe-200/60 p-4 z-20 overflow-x-auto whitespace-nowrap">
+                <div class="max-w-3xl mx-auto flex space-x-1.5 px-2">
+                    <button onclick="switchSection('advantages')" id="tab-advantages" class="main-tab px-4 py-2 rounded-xl text-xs font-medium border border-cafe-200 bg-white text-cafe-700 hover:border-cafe-600 transition-all duration-150 main-tab-active">
+                        優勢定位
+                    </button>
+                    <button onclick="switchSection('experience')" id="tab-experience" class="main-tab px-4 py-2 rounded-xl text-xs font-medium border border-cafe-200 bg-white text-cafe-700 hover:border-cafe-600 transition-all duration-150">
+                        工作經歷
+                    </button>
+                    <button onclick="switchSection('education')" id="tab-education" class="main-tab px-4 py-2 rounded-xl text-xs font-medium border border-cafe-200 bg-white text-cafe-700 hover:border-cafe-600 transition-all duration-150">
+                        學歷背景
+                    </button>
+                    <button onclick="switchSection('thesis')" id="tab-thesis" class="main-tab px-4 py-2 rounded-xl text-xs font-medium border border-cafe-200 bg-white text-cafe-700 hover:border-cafe-600 transition-all duration-150">
+                        論文轉譯
+                    </button>
+                    <button onclick="switchSection('skills')" id="tab-skills" class="main-tab px-4 py-2 rounded-xl text-xs font-medium border border-cafe-200 bg-white text-cafe-700 hover:border-cafe-600 transition-all duration-150">
+                        專業技能
+                    </button>
+                    <button onclick="switchSection('vision')" id="tab-vision" class="main-tab px-4 py-2 rounded-xl text-xs font-medium border border-cafe-200 bg-white text-cafe-700 hover:border-cafe-600 transition-all duration-150">
+                        核心價值
+                    </button>
+                </div>
+            </nav>
+
+            <!-- 內容呈現區 -->
+            <div id="content-viewport" class="max-w-3xl w-full mx-auto px-6 py-8 flex-1">
+                
+                <!-- 1. 優勢定位板塊 -->
+                <section id="sec-advantages" class="section-panel space-y-4">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-1 h-5 bg-cafe-600 rounded"></div>
+                        <h2 class="text-base font-bold tracking-wider text-cafe-800">優勢定位</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm">
+                            <h3 class="font-bold text-cafe-900 text-xs flex items-center">
+                                <i data-lucide="graduation-cap" class="w-4 h-4 mr-1.5 text-cafe-700"></i>
+                                雙領域學術與實務背景
+                            </h3>
+                            <p class="text-[11px] text-cafe-600 mt-2 leading-relaxed">
+                                國立高雄師範大學復健諮商碩士與實踐大學服飾設計學士。兼具行為指標評估邏輯與高感性美化設計力。
+                            </p>
+                            <span class="text-[9px] text-cafe-500 mt-3 block">#復健諮商 #設計經營 #跨領域整合</span>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm">
+                            <h3 class="font-bold text-cafe-900 text-xs flex items-center">
+                                <i data-lucide="wallet" class="w-4 h-4 mr-1.5 text-cafe-700"></i>
+                                政府教育計畫預算管制
+                            </h3>
+                            <p class="text-[11px] text-cafe-600 mt-2 leading-relaxed">
+                                具備教育部百萬輔導計畫經費獨立控管、自籌款調配及人事費、二代健保核算實務經驗。
+                            </p>
+                            <span class="text-[9px] text-cafe-500 mt-3 block">#經費管制 #計畫核銷 #行政精準度</span>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm">
+                            <h3 class="font-bold text-cafe-900 text-xs flex items-center">
+                                <i data-lucide="cpu" class="w-4 h-4 mr-1.5 text-cafe-700"></i>
+                                生成式 AI 實務轉譯
+                            </h3>
+                            <p class="text-[11px] text-cafe-600 mt-2 leading-relaxed">
+                                熟練運用 ChatGPT、Gemini 與 Canva 進行資料分析、報告書框架自動化生成與行宣圖表設計。
+                            </p>
+                            <span class="text-[9px] text-cafe-500 mt-3 block">#智慧工作流 #數位行銷 #資訊視覺化</span>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm">
+                            <h3 class="font-bold text-cafe-900 text-xs flex items-center">
+                                <i data-lucide="heart" class="w-4 h-4 mr-1.5 text-cafe-700"></i>
+                                表達性藝術療癒方案
+                            </h3>
+                            <p class="text-[11px] text-cafe-600 mt-2 leading-relaxed">
+                                專攻生涯敘事與多媒材藝術創作之自我關照研究，能為組織規劃高彈性正念舒壓工作坊。
+                            </p>
+                            <span class="text-[9px] text-cafe-500 mt-3 block">#表達性藝術治療 #員工協助方案 #EAP</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. 工作與實習經歷板塊 -->
+                <section id="sec-experience" class="section-panel hidden space-y-4">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-1 h-5 bg-cafe-600 rounded"></div>
+                        <h2 class="text-base font-bold tracking-wider text-cafe-800">工作與實習經歷</h2>
+                    </div>
+                    <div class="space-y-4 relative before:absolute before:top-2 before:bottom-2 before:left-[15px] before:w-0.5 before:bg-cafe-200">
+                        
+                        <!-- 資源教室輔導員 -->
+                        <div class="relative pl-9">
+                            <div class="absolute left-[3px] top-1.5 w-6 h-6 bg-cafe-600 border-4 border-cafe-50 rounded-full flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm space-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-sm text-cafe-900">資源教室輔導員 (個案管理師)</h3>
+                                        <p class="text-[11px] text-cafe-600">私立科大 | 115/01 - 115/04 (民國115年1月 - 115年4月)</p>
+                                    </div>
+                                    <span class="mt-1.5 sm:mt-0 px-2 py-0.5 bg-cafe-100 text-cafe-800 rounded text-[10px] font-medium self-start">計畫管制</span>
+                                </div>
+                                <ul class="text-[11px] text-cafe-700 space-y-1.5 list-disc list-inside leading-relaxed">
+                                    <li>教育部大專身障生招收與輔導計畫（百萬級經費）預算編列、核銷與自籌款/健保費控管。</li>
+                                    <li>執行個別化支持計劃（ISP）、生理/心理/社會職能評估，撰寫提報鑑定個案報告。</li>
+                                    <li>處理高關懷個案與突發危機，跨部門協調行政人力與福利資源安排。</li>
+                                    <li>運用藝術媒材引導技術，設計並帶領輔導室之職場適應與情緒成長團體。</li>
+                                </ul>
+                                <p class="text-[10px] text-cafe-500 pt-1">#個案管理 #教育部計畫 #經費核銷 #表達性團體</p>
+                            </div>
+                        </div>
+
+                        <!-- 職評實習生 -->
+                        <div class="relative pl-9">
+                            <div class="absolute left-[3px] top-1.5 w-6 h-6 bg-cafe-600 border-4 border-cafe-50 rounded-full flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm space-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-sm text-cafe-900">職業輔導評量及職管員實習生</h3>
+                                        <p class="text-[11px] text-cafe-600">高雄市勞動部博愛職業技能訓練中心 | 2024/06 - 2024/10</p>
+                                    </div>
+                                    <span class="mt-1.5 sm:mt-0 px-2 py-0.5 bg-cafe-100 text-cafe-800 rounded text-[10px] font-medium self-start">核心實務</span>
+                                </div>
+                                <ul class="text-[11px] text-cafe-700 space-y-1.5 list-disc list-inside leading-relaxed">
+                                    <li>分析轉介單，挑選並調配客製化標準化測驗組合進行施測。</li>
+                                    <li>實施情境評量與工作樣本 analysis，交叉驗證個案實際職場產能與限制。</li>
+                                    <li>與個案進行深度晤談，產出專業職業輔導評量分析報告。</li>
+                                </ul>
+                                <p class="text-[10px] text-cafe-500 pt-1">#職業重建 #工作分析 #情境評估 #晤談技術</p>
+                            </div>
+                        </div>
+
+                        <!-- 平面美編 -->
+                        <div class="relative pl-9">
+                            <div class="absolute left-[3px] top-1.5 w-6 h-6 bg-cafe-600 border-4 border-cafe-50 rounded-full flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm space-y-2">
+                                <h3 class="font-bold text-sm text-cafe-900">平面設計 / 美編人員</h3>
+                                <p class="text-[11px] text-cafe-600">萊特機器人教室 萊特文教有限公司 | 2021/07 - 2022/01</p>
+                                <ul class="text-[11px] text-cafe-700 space-y-1.5 list-disc list-inside leading-relaxed">
+                                    <li>規劃與設計電商平台蝦皮賣場視覺、商品圖排版。</li>
+                                    <li>製作文教招生海報、手冊美術編輯，導入 AI 繪圖工具優化視覺產出效率。</li>
+                                </ul>
+                                <p class="text-[10px] text-cafe-500 pt-1">#視覺設計 #Canva排版 #電商美編</p>
+                            </div>
+                        </div>
+
+                        <!-- 設計助理 -->
+                        <div class="relative pl-9">
+                            <div class="absolute left-[3px] top-1.5 w-6 h-6 bg-cafe-600 border-4 border-cafe-50 rounded-full flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm space-y-2">
+                                <h3 class="font-bold text-sm text-cafe-900">設計助理 (暑期實習生)</h3>
+                                <p class="text-[11px] text-cafe-600">財團法人紡織拓展協會 | 2019/07 - 2019/08</p>
+                                <ul class="text-[11px] text-cafe-700 space-y-1.5 list-disc list-inside leading-relaxed">
+                                    <li>收集與整合市場流行趨勢，設計專案小組企業識別 Logo 與服裝專案視覺系統。</li>
+                                    <li>運用 AI 電腦轉譯製圖，協同小組完成產品推廣企劃書。</li>
+                                </ul>
+                                <p class="text-[10px] text-cafe-500 pt-1">#趨勢分析 #CIS設計 #企劃書撰寫</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 3. 學歷背景板塊 -->
+                <section id="sec-education" class="section-panel hidden space-y-4">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-1 h-5 bg-cafe-600 rounded"></div>
+                        <h2 class="text-base font-bold tracking-wider text-cafe-800">學歷背景</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm">
+                            <span class="text-[10px] text-cafe-500 font-medium">2022/09 – 2026/01</span>
+                            <h3 class="font-bold text-cafe-900 text-xs mt-1">諮商心理與復健諮商研究所 碩士</h3>
+                            <p class="text-[10px] text-cafe-600">國立高雄師範大學</p>
+                            <p class="text-[10px] text-cafe-500 mt-2 leading-relaxed">專攻：身障者生涯發展、表達性藝術治療技術、自我關照研究</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-cafe-200/40 shadow-sm">
+                            <span class="text-[10px] text-cafe-500 font-medium">2015/09 – 2020/06</span>
+                            <h3 class="font-bold text-cafe-900 text-xs mt-1">服飾設計與經營學系 學士</h3>
+                            <p class="text-[10px] text-cafe-600">實踐大學 (高雄校區)</p>
+                            <p class="text-[10px] text-cafe-500 mt-2 leading-relaxed">專攻：品牌視覺設計、服飾經營企劃、配件袋包織品製作</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. 論文轉譯板塊 -->
+                <section id="sec-thesis" class="section-panel hidden space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-1 h-5 bg-cafe-600 rounded"></div>
+                        <h2 class="text-base font-bold tracking-wider text-cafe-800">論文轉譯</h2>
+                    </div>
+                    <div class="bg-cafe-100/40 p-5 rounded-2xl border border-cafe-200/60 space-y-4">
+                        <p class="text-xs text-cafe-700 italic border-l-2 border-cafe-600 pl-3 leading-relaxed">
+                            研究主題：《免疫介導壞死性肌炎之身心障礙者的生涯敘事—以藝術創作進行自我關照之研究》
+                        </p>
+                        
+                        <!-- 論文互動展示區 -->
+                        <div class="bg-white rounded-xl border border-cafe-200/60 p-4 shadow-sm">
+                            <div class="flex overflow-x-auto gap-1.5 border-b border-cafe-100 pb-2.5 mb-3.5">
+                                <button onclick="switchArtTab('mask')" id="art-tab-mask" class="art-tab shrink-0 px-3 py-1 text-[11px] rounded-lg border border-cafe-200 bg-cafe-50 text-cafe-700 art-tab-active">
+                                    社交面具
+                                </button>
+                                <button onclick="switchArtTab('collage')" id="art-tab-collage" class="art-tab shrink-0 px-3 py-1 text-[11px] rounded-lg border border-cafe-200 bg-cafe-50 text-cafe-700">
+                                    幻想現實躺平
+                                </button>
+                                <button onclick="switchArtTab('machine')" id="art-tab-machine" class="art-tab shrink-0 px-3 py-1 text-[11px] rounded-lg border border-cafe-200 bg-cafe-50 text-cafe-700">
+                                    冷血機器
+                                </button>
+                                <button onclick="switchArtTab('cards')" id="art-tab-cards" class="art-tab shrink-0 px-3 py-1 text-[11px] rounded-lg border border-cafe-200 bg-cafe-50 text-cafe-700">
+                                    價值釐清
+                                </button>
+                                <button onclick="switchArtTab('funeral')" id="art-tab-funeral" class="art-tab shrink-0 px-3 py-1 text-[11px] rounded-lg border border-cafe-200 bg-cafe-50 text-cafe-700">
+                                    憂鬱告別式
+                                </button>
+                            </div>
+
+                            <!-- 創作與分析動態內容 -->
+                            <div id="art-content-box" class="space-y-4 min-h-[180px]">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="md:col-span-1 bg-cafe-50 p-3 rounded-lg border border-cafe-200 flex flex-col justify-between">
+                                        <div>
+                                            <h4 class="text-[11px] font-bold text-cafe-800">藝術創作象徵</h4>
+                                            <p class="text-[10px] text-cafe-600 mt-1 leading-relaxed">石膏繃帶與壓克力。外層覆蓋代表活力、溫和與工作尊嚴的明亮黃綠，內面保留未著色、不願輕易示人的陰影。</p>
+                                        </div>
+                                        <span class="text-[9px] text-cafe-400 mt-2 block">第四章 創作層面</span>
+                                    </div>
+                                    <div class="md:col-span-2 space-y-3">
+                                        <div>
+                                            <h4 class="text-xs font-bold text-cafe-900 flex items-center">
+                                                <i data-lucide="brain" class="w-3.5 h-3.5 mr-1 text-cafe-700"></i>
+                                                心理與生涯重構分析 (第五章)
+                                            </h4>
+                                            <p class="text-[11px] text-cafe-700 mt-1 leading-relaxed">
+                                                身障同仁在求職中常用高度穩定且低需求的「社交面具」來包裝。這種「安全的表演」能克服刻板印象，但會高強度消耗能量，組織應適時給予彈性與支持性心理空間。
+                                            </p>
+                                        </div>
+                                        <div class="p-3 bg-amber-50 border border-amber-100 rounded-xl text-[10px] text-amber-850">
+                                            <h4 class="font-bold flex items-center text-amber-900">
+                                                <i data-lucide="briefcase" class="w-3.5 h-3.5 mr-1"></i>
+                                                組織實務應用
+                                            </h4>
+                                            <p class="mt-1 leading-relaxed">
+                                                **專業角色管理與情緒界線**：在提供高敏度個管服務時，能展現高同理心，同時嚴格把控個人心理界線，避免職業倦怠，保證專業產出的長期續航。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 5. 專業技能板塊 -->
+                <section id="sec-skills" class="section-panel hidden space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-1 h-5 bg-cafe-600 rounded"></div>
+                        <h2 class="text-base font-bold tracking-wider text-cafe-800">專業技能與數位工具</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="space-y-3">
+                            <div class="text-xs font-bold text-cafe-700 tracking-widest border-b border-cafe-200 pb-2 flex items-center">
+                                <i data-lucide="folder-heart" class="w-4 h-4 mr-1.5 text-cafe-600"></i>
+                                復健諮商與個管
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-1 bg-white border border-cafe-200 rounded-lg text-xs text-cafe-700">職業輔導評量</span>
+                                <span class="px-2 py-1 bg-white border border-cafe-200 rounded-lg text-xs text-cafe-700">個別化支持計劃(ISP)</span>
+                                <span class="px-2 py-1 bg-white border border-cafe-200 rounded-lg text-xs text-cafe-700">工作分析與職務拆解</span>
+                                <span class="px-2 py-1 bg-white border border-cafe-200 rounded-lg text-xs text-cafe-700">表達性藝術治療技術</span>
+                                <span class="px-2 py-1 bg-white border border-cafe-200 rounded-lg text-xs text-cafe-700">身權法規與合理調整(RAs)</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="text-xs font-bold text-cafe-700 tracking-widest border-b border-cafe-200 pb-2 flex items-center">
+                                <i data-lucide="zap" class="w-4 h-4 mr-1.5 text-cafe-600"></i>
+                                生成式 AI 實務
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-1 bg-amber-50/50 border border-amber-200 rounded-lg text-xs text-amber-900 font-medium">ChatGPT / Gemini</span>
+                                <span class="px-2 py-1 bg-amber-50/50 border border-amber-200 rounded-lg text-xs text-amber-900 font-medium">AI 寫作與框架生成</span>
+                                <span class="px-2 py-1 bg-amber-50/50 border border-amber-200 rounded-lg text-xs text-amber-900 font-medium">Canva 智慧排版</span>
+                                <span class="px-2 py-1 bg-amber-50/50 border border-amber-200 rounded-lg text-xs text-amber-900 font-medium">AI 視覺行銷素材</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="text-xs font-bold text-cafe-700 tracking-widest border-b border-cafe-200 pb-2 flex items-center">
+                                <i data-lucide="file-text" class="w-4 h-4 mr-1.5 text-cafe-600"></i>
+                                商業文書與行政
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-1 bg-white border border-cafe-200 rounded-lg text-xs text-cafe-700">教育部計畫經費編列</span>
+                                <span class="px-2 py-1 bg-white border border-cafe-200 rounded-lg text-xs text-cafe-700">二代健保核算與流用規定</span>
+                                <span class="px-2 py-1 bg-white border border-cafe-200 rounded-lg text-xs text-cafe-700">Office 文書系統</span>
+                                <span class="px-2 py-1 bg-white border border-cafe-200 rounded-lg text-xs text-cafe-700">專案企劃書撰寫</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. 核心價值板塊 -->
+                <section id="sec-vision" class="section-panel hidden space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-1 h-5 bg-cafe-600 rounded"></div>
+                        <h2 class="text-base font-bold tracking-wider text-cafe-800">核心價值</h2>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-cafe-200/40 shadow-sm space-y-4">
+                        <p class="text-xs text-cafe-800 font-medium italic border-l-2 border-cafe-600 pl-3 leading-relaxed">
+                            「將對的人放在對的位置，能把法定負擔轉化為企業最具韌性的社會影響力資產。」
+                        </p>
+                        <div class="text-[11px] text-cafe-700 space-y-3 leading-relaxed">
+                            <p>
+                                作為輕度肢體障礙者，我擁有高度的生命韌性與身障敏感度；作為復健諮商碩士，我具備勞動部職業輔導評量員的科學評估素養。
+                            </p>
+                            <p>
+                                我能為組織或團隊提供的具體價值包含：運用工作分析專業進行職務拆解，協助企業在實踐 DE&I 多元平等包容及 ESG 評鑑（Social）時取得亮點；利用表達性藝術治療技術設計員工情緒關照團體，穩定團隊人力結構。
+                            </p>
+                        </div>
+                        <div class="pt-2 flex flex-wrap gap-1.5 border-t border-cafe-100">
+                            <span class="px-2 py-0.5 bg-cafe-50 rounded text-[10px] text-cafe-600 font-medium">#自我接納</span>
+                            <span class="px-2 py-0.5 bg-cafe-50 rounded text-[10px] text-cafe-600 font-medium">#社會模式反思</span>
+                            <span class="px-2 py-0.5 bg-cafe-50 rounded text-[10px] text-cafe-600 font-medium">#共感陪伴</span>
+                            <span class="px-2 py-0.5 bg-cafe-50 rounded text-[10px] text-cafe-600 font-medium">#尊嚴就業</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- 腳本控制 -->
+    <script>
+        // 初始化 Lucide 圖標
+        lucide.createIcons();
+
+        // ==========================================
+        // 1. 單行水平標籤導覽列切換控制
+        // ==========================================
+        function switchSection(sectionId) {
+            // 隱藏右側所有的內容面板
+            document.querySelectorAll('.section-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+            // 顯示當前點選的內容面板
+            const activePanel = document.getElementById(`sec-${sectionId}`);
+            if (activePanel) {
+                activePanel.classList.remove('hidden');
+            }
+
+            // 更新選單 Tab 按鈕的活躍樣式
+            document.querySelectorAll('.main-tab').forEach(tab => {
+                tab.classList.remove('main-tab-active');
+            });
+            const activeTab = document.getElementById(`tab-${sectionId}`);
+            if (activeTab) {
+                activeTab.classList.add('main-tab-active');
+            }
+
+            // 平滑滾動置頂
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==========================================
+        // 2. 定義論文Ch4與Ch5藝術創作解說資料庫
+        // ==========================================
+        const artDatabase = {
+            mask: {
+                title: "社交面具",
+                creation: "石膏繃帶與壓克力。外層覆蓋代表活力、溫和與工作尊嚴的明亮黃綠，內面保留未著色、不願輕易示人的陰影。",
+                analysis: "身障同仁在求職中常用高度穩定且低需求的「社交面具」來包裝。這種「安全的表演」能克服刻板印象，但會高強度消耗能量，組織應適時給予彈性與支持性心理空間。",
+                application: "**專業角色管理與情緒界線**：在提供高敏度個管服務時，能展現高同理心，同時嚴格把控個人心理界線，避免職業倦怠，保證專業產出的長期續航。"
+            },
+            collage: {
+                title: "幻想現實躺平",
+                creation: "雜誌、照片、植物圖鑑與手繪線條拼貼。構建了維持日常生活不崩潰的最低限度、理想且踏實的避風港安全邊界。",
+                analysis: "此創作展現了人在面臨身體慢性病痛後的「積極暫停」與自我和解。並非完全退縮，而是重建安全的物理與心理環境，以維持生命能動性與自我調適力。",
+                application: "**合理調整與適配性分析**：能客觀、精準評估工作崗位環境對同仁產生的負擔限度，協助企業規劃具彈性、高心理安全感的工作流程，降低磨合成本。"
+            },
+            machine: {
+                title: "冷血機器",
+                creation: "壓克力色彩渲染後，施以撕裂行動。象徵對「唯利益與效率至上、量化生命並抹煞主體性」之冷漠社會體制的無聲控訴。",
+                analysis: "個案通過創作宣洩對體制化職場的隱形憤怒。撕碎並重組的過程將痛苦外化，實現了「能動性（Agency）」的逆轉與重構，將被定義者翻轉為自我主導者。",
+                application: "**DE&I 包容性組織文化推動**：以此理論基礎，為企業主管與人資提供深度的員工差異化管理與人本人因關懷方案諮詢，重塑共融的企業文化。"
+            },
+            cards: {
+                title: "價值釐清與尊嚴",
+                creation: "價值觀牌卡、自印照片、粉紅與黑色蠟筆重影拼貼。將「恢復肌力」與「安樂死掌控權」兩項看似矛盾的卡牌並置呈現。",
+                analysis: "不論是追求身體康復還是掌握命運終點，個案的核心出發點皆為維持自主權與尊嚴。障礙同仁在面對受限生命時，其自我選擇的主體性更需要受到組織尊重。",
+                application: "**個別化優勢晤談技術**：善於操作價值牌卡等質性工具，引導案主釐清個人優勢與深層價值觀，幫助其在職場再調整中做最尊嚴、最自信的定位。"
+            },
+            funeral: {
+                title: "憂鬱告別式",
+                creation: "黑色素描自畫像（遺照象徵）與繽紛溫暖的手工輕黏土黏合繽紛花圈。形成痛苦承接與自我送行祝福的雙重敘事。",
+                analysis: "此為極具洞察力的「情緒外化與告別儀式」。個案成功將憂鬱與自我分離，不再被病理或污名被動定義，而是成為主持痛苦離去的主體，完成深度自我關照。",
+                application: "**員工協助方案（EAP）工作坊設計**：精通多媒材情緒關照與正念團體方案設計。可為組織設計結合手作與心理重構的員工舒壓工作坊，釋放高工時累積的隱性焦慮。"
+            }
+        };
+
+        function switchArtTab(tabName) {
+            document.querySelectorAll('.art-tab').forEach(tab => {
+                tab.classList.remove('art-tab-active');
+            });
+            document.getElementById(`art-tab-${tabName}`).classList.add('art-tab-active');
+
+            const content = artDatabase[tabName];
+            const contentBox = document.getElementById('art-content-box');
+
+            contentBox.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 animate-fade-in">
+                    <div class="md:col-span-1 bg-cafe-50 p-3 rounded-lg border border-cafe-200 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-[11px] font-bold text-cafe-800">藝術創作象徵</h4>
+                            <p class="text-[10px] text-cafe-600 mt-1 leading-relaxed">${content.creation}</p>
+                        </div>
+                        <span class="text-[9px] text-cafe-400 mt-2 block">第四章 創作層面</span>
+                    </div>
+                    <div class="md:col-span-2 space-y-3">
+                        <div>
+                            <h4 class="text-xs font-bold text-cafe-900 flex items-center">
+                                <i data-lucide="brain" class="w-3.5 h-3.5 mr-1 text-cafe-700"></i>
+                                心理與生涯重構分析 (第五章)
+                            </h4>
+                            <p class="text-[11px] text-cafe-700 mt-1 leading-relaxed">${content.analysis}</p>
+                        </div>
+                        <div class="p-3 bg-amber-50 border border-amber-100 rounded-xl text-[10px] text-amber-850">
+                            <h4 class="font-bold flex items-center text-amber-900">
+                                <i data-lucide="briefcase" class="w-3.5 h-3.5 mr-1"></i>
+                                組織實務應用
+                            </h4>
+                            <p class="mt-1 leading-relaxed">${content.application}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            // 重新載入 Lucide
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
